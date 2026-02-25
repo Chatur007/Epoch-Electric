@@ -17,7 +17,7 @@ export default function ClientsSection() {
     <section className="relative py-16 bg-slate-dark overflow-hidden">
       {/* Title */}
       <div className="text-center mb-10">
-        <p className="text-sm uppercase tracking-[0.3em] text-champagne font-medium">
+        <p className="text-lg uppercase tracking-[0.3em] text-champagne font-medium">
           Trusted By Industry Leaders
         </p>
       </div>

@@ -10,7 +10,7 @@ const projects = [
   {
     title: 'Substation Integration',
     category: '220kV Power Systems',
-    image: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80',
   },
   {
     title: 'Industrial Plant Automation',
@@ -20,7 +20,7 @@ const projects = [
   {
     title: 'Control Room Commissioning',
     category: 'Turnkey Solutions',
-    image: 'https://images.unsplash.com/photo-1581092160614-7f31f0ddbe14?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1000&q=80',
   },
   {
     title: 'Panel Manufacturing',
@@ -45,7 +45,7 @@ export default function ProjectsPreview() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 Featured Projects
               </p>
             </FadeIn>
@@ -90,7 +90,7 @@ export default function ProjectsPreview() {
                   />
                   
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/80 via-slate-dark/20 to-transparent" />
+                  <div className="absolute inset-0 bg-primary/20" />
                   
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-8">

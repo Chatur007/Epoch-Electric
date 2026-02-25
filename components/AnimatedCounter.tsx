@@ -27,7 +27,7 @@ export default function AnimatedCounter({
   }, [count, inView, value]);
 
   return (
-    <span ref={ref} className={`font-serif text-5xl lg:text-6xl font-semibold text-champagne ${className}`}>
+    <span ref={ref} className={`font-serif text-5xl lg:text-6xl font-semibold text-gradient ${className}`}>
       <motion.span>{rounded}</motion.span>
       <span className="text-slate-dark/30">{suffix}</span>
     </span>

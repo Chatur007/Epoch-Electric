@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const epochPhilosophy = [
   { letter: 'E', meaning: 'Ethical Business', description: 'Conducting business with integrity and transparency in all dealings.' },
   { letter: 'P', meaning: 'Providing Impeccable Services', description: 'Delivering excellence in every project we undertake.' },
-  { letter: 'O', meaning: 'Obtain Market Leadership', description: 'Striving to be the industry benchmark in electrical engineering.' },
+  { letter: 'O', meaning: 'Obtain Market Leadership', description: 'Striving to be the Best in electrical engineering.' },
   { letter: 'C', meaning: 'Customer Satisfaction', description: 'Prioritizing client needs and exceeding expectations.' },
   { letter: 'H', meaning: 'Humanity with Integrity', description: 'Building relationships based on trust and respect.' },
 ];
@@ -137,12 +137,14 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-5 gap-6">
             {epochPhilosophy.map((item, index) => (
               <FadeIn key={item.letter} delay={index * 0.1}>
-                <div className="text-center p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-champagne/50 transition-all duration-500 group">
+                <div className="flex flex-col justify-between text-center p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:border-champagne/50 transition-all duration-500 group min-h-[260px] h-full">
                   <span className="font-serif text-6xl font-bold text-champagne group-hover:scale-110 inline-block transition-transform duration-300">
                     {item.letter}
                   </span>
-                  <h3 className="text-white font-semibold mt-4 mb-2">{item.meaning}</h3>
-                  <p className="text-white/60 text-sm">{item.description}</p>
+                  <div>
+                    <h3 className="text-white font-semibold mt-4 mb-2 text-sm">{item.meaning}</h3>
+                    <p className="text-white/60 text-sm">{item.description}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}

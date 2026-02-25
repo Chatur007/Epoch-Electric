@@ -61,7 +61,7 @@ export default function HeroSection() {
 
           {/* Main Headline */}
           <motion.h1 
-            className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[1.1] text-white"
+            className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[1.2] text-white"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -70,16 +70,16 @@ export default function HeroSection() {
               initial={{ clipPath: 'inset(0 100% 0 0)' }}
               animate={{ clipPath: 'inset(0 0% 0 0)' }}
               transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block"
+              className="inline-block whitespace-nowrap leading-[1.4] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.3]"
             >
               Engineering Power.
             </motion.span>
-            <br />
+            <br className="hidden sm:block"/>
             <motion.span
               initial={{ clipPath: 'inset(0 100% 0 0)' }}
               animate={{ clipPath: 'inset(0 0% 0 0)' }}
               transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block"
+              className="inline-block leading-[1.4] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.3]"
             >
               Delivering{' '}
               <span className="text-champagne">Precision.</span>
@@ -107,7 +107,7 @@ export default function HeroSection() {
             <MagneticButton>
               <Link 
                 href="/projects"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-champagne text-white font-medium tracking-wide transition-all duration-500 hover:bg-white hover:text-slate-dark"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-medium tracking-wide transition-all duration-500 hover:shadow-xl hover:scale-105"
               >
                 Explore Our Work
                 <svg 
@@ -124,7 +124,7 @@ export default function HeroSection() {
             <MagneticButton>
               <Link 
                 href="/contact"
-                className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-white/30 text-white font-medium tracking-wide transition-all duration-500 hover:border-champagne hover:bg-champagne"
+                className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-white/30 text-white font-medium tracking-wide transition-all duration-500 hover:border-transparent hover:bg-accent"
               >
                 Request Consultation
               </Link>
@@ -145,7 +145,7 @@ export default function HeroSection() {
             className="flex flex-col items-center gap-2 text-white/50"
           >
             <span className="text-xs uppercase tracking-[0.2em]">Scroll</span>
-            <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent" />
+            <div className="w-px h-12 bg-primary/30" />
           </motion.div>
         </motion.div>
       </motion.div>

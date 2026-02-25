@@ -262,8 +262,7 @@ export function ImageReveal({
   return (
     <motion.div
       initial={{ clipPath: clipPaths[direction].hidden }}
-      whileInView={{ clipPath: clipPaths[direction].visible }}
-      viewport={{ once: true, amount: 0.3 }}
+      animate={{ clipPath: clipPaths[direction].visible }}
       transition={{ 
         duration: 1.2,
         delay,

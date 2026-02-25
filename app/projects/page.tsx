@@ -13,7 +13,7 @@ const projects = [
     title: '220kV Substation Integration',
     category: 'Substations',
     description: 'Complete design and commissioning of 220kV substation for industrial park.',
-    image: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80',
     client: 'Major Industrial Group',
   },
   {
@@ -34,14 +34,14 @@ const projects = [
     title: '36kV VCB Panel Installation',
     category: 'Control Panels',
     description: 'Supply and installation of medium voltage VCB panels for power distribution.',
-    image: 'https://images.unsplash.com/photo-1562141961-b5d159a71f00?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1000&q=80',
     client: 'Infrastructure Developer',
   },
   {
     title: 'SCADA Implementation',
     category: 'Automation',
     description: 'Comprehensive SCADA system implementation for process monitoring and control.',
-    image: 'https://images.unsplash.com/photo-1581092160614-7f31f0ddbe14?auto=format&fit=crop&w=1000&q=80',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1000&q=80',
     client: 'Chemical Plant',
   },
   {
@@ -116,8 +116,8 @@ export default function ProjectsPage() {
                   whileTap={{ scale: 0.98 }}
                   className={`px-6 py-3 text-sm uppercase tracking-wider font-medium transition-all duration-300 ${
                     filter === cat
-                      ? 'bg-champagne text-white'
-                      : 'bg-white text-slate-dark border border-slate-dark/10 hover:border-champagne'
+                      ? 'bg-primary text-white'
+                      : 'bg-white text-slate-dark border border-slate-dark/10 hover:border-primary'
                   }`}
                 >
                   {cat}

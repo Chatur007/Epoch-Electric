@@ -269,7 +269,7 @@ export default function CareersPage() {
                             <a
                               href="#apply-form"
                               onClick={() => setFormData(prev => ({ ...prev, position: role.title }))}
-                              className="inline-flex items-center gap-2 px-6 py-3 bg-champagne text-white font-medium hover:bg-white hover:text-slate-dark transition-all duration-300"
+                              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium hover:shadow-lg hover:scale-105 transition-all duration-300"
                             >
                               Apply Now
                               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -399,7 +399,7 @@ export default function CareersPage() {
                   <MagneticButton className="w-full">
                     <button
                       type="submit"
-                      className="w-full py-4 bg-champagne text-white font-medium tracking-wide hover:bg-slate-dark transition-colors duration-500"
+                      className="w-full py-4 bg-primary text-white font-medium tracking-wide hover:shadow-lg hover:scale-[1.02] transition-all duration-500"
                     >
                       Submit Application
                     </button>

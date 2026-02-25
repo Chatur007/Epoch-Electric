@@ -38,15 +38,16 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-champagne to-champagne/70 flex items-center justify-center">
-              <span className="text-white font-serif font-bold text-lg">E</span>
-            </div>
-            <div className="absolute inset-0 rounded-full bg-champagne/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="relative w-12 h-12">
+            <img
+              src="/images/Logo/logo2.png"
+              alt="Epoch Electric Logo"
+              className="w-12 h-12 object-contain"
+            />
           </div>
           <div className="flex flex-col">
-            <span className="font-serif text-xl font-semibold tracking-wide text-white">
-              Epoch <span className="text-champagne">Electric</span>
+            <span className="font-serif text-xl font-semibold tracking-wide text-white ">
+              <span className="text-primary">Epoch</span> <span className="text-champagne">Electric</span>
             </span>
           </div>
         </Link>
@@ -60,7 +61,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                   pathname === item.href 
-                    ? 'bg-champagne text-white' 
+                    ? 'bg-primary text-white' 
                     : 'text-white/80 hover:text-white'
                 }`}
               >
@@ -100,8 +101,7 @@ export default function Navbar() {
             }}
             className="w-6 h-0.5 bg-white block"
           />
-        </button>
-      </nav>
+        </button>      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -126,7 +126,7 @@ export default function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block text-lg font-medium py-2 ${
                       pathname === item.href 
-                        ? 'text-champagne' 
+                        ? 'text-primary' 
                         : 'text-white'
                     }`}
                   >
@@ -143,7 +143,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full text-center py-4 bg-champagne text-white font-medium rounded-full"
+                  className="block w-full text-center py-4 bg-primary text-white font-medium rounded-full"
                 >
                   Get Quote
                 </Link>

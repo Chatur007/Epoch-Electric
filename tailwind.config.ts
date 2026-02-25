@@ -10,16 +10,35 @@ const config: Config = {
       colors: {
         ivory: '#F8F8F6',
         cream: '#EFEFEA',
-        champagne: '#C6A75E',
+        champagne: '#ef7e1f',
+        primary: '#00a1e2',
+        secondary: '#ef7e1f',
+        blue: {
+          brand: '#00a1e2',
+       
+          light: '#33b4e8',
+          dark: '#0081b5',
+        },
+        orange: {
+          brand: '#ef7e1f',
+          light: '#f2984b',
+          dark: '#bf6519',
+        },
         slate: {
           dark: '#1F2A37',
           medium: '#374151',
           light: '#6B7280',
         },
       },
+      backgroundImage: {
+        'gradient-brand': 'linear-gradient(135deg, #00a1e2 0%, #ef7e1f 100%)',
+        'gradient-brand-reverse': 'linear-gradient(135deg, #ef7e1f 0%, #00a1e2 100%)',
+        'gradient-brand-horizontal': 'linear-gradient(90deg, #00a1e2 0%, #ef7e1f 100%)',
+        'gradient-brand-vertical': 'linear-gradient(180deg, #00a1e2 0%, #ef7e1f 100%)',
+      },
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Poppins', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.8s ease-out forwards',
@@ -51,8 +70,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-12px)' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 0 rgba(198,167,94,0)' },
-          '50%': { boxShadow: '0 0 40px rgba(198,167,94,0.3)' },
+          '0%, 100%': { boxShadow: '0 0 0 rgba(0,161,226,0)' },
+          '50%': { boxShadow: '0 0 40px rgba(0,161,226,0.3)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
@@ -81,7 +100,7 @@ const config: Config = {
       boxShadow: {
         'luxury': '0 4px 30px rgba(0,0,0,0.06)',
         'luxury-lg': '0 10px 60px rgba(0,0,0,0.1)',
-        'gold': '0 4px 30px rgba(198,167,94,0.2)',
+        'gold': '0 4px 30px rgba(0,161,226,0.2)',
       },
     },
   },

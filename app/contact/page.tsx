@@ -300,7 +300,7 @@ export default function ContactPage() {
                       <MagneticButton className="w-full">
                         <button
                           type="submit"
-                          className="w-full py-4 bg-champagne text-white font-medium tracking-wide hover:bg-slate-dark transition-colors duration-500"
+                          className="w-full py-4 bg-primary text-white font-medium tracking-wide hover:shadow-lg hover:scale-[1.02] transition-all duration-500"
                         >
                           Send Message
                         </button>

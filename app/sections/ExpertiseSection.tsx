@@ -1,63 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FadeIn, TiltCard } from '@/components/Motion';
+import Image from 'next/image';
+import { FadeIn } from '@/components/Motion';
 
 const expertise = [
   {
     title: 'Extra High Voltage Systems',
-    description: 'Substations and power distribution up to 220kV with precision engineering.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+    description: 'Substations and power distribution up to 220kV with precision engineering. Our EHV solutions ensure reliable power transmission across industrial complexes.',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop',
+    layout: 'text-top',
   },
   {
     title: 'LV & MV Control Panels',
     description: 'IEC 61439 compliant panels up to 6300A (LV) and 36kV VCB panels (MV).',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-      </svg>
-    ),
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
+    layout: 'image-only',
   },
   {
     title: 'PLC | SCADA | BMS',
-    description: 'Intelligent automation and building management systems for smart operations.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    description: 'Intelligent automation and building management systems for smart operations. Real-time control and monitoring solutions.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+    layout: 'text-top',
   },
   {
-    title: 'ELV & Automation',
-    description: 'Extra-low voltage systems and process automation solutions.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+    title: 'Smart IoT Monitoring',
+    description: 'Real-time monitoring and remote management keep you connected to your power source.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    layout: 'image-top',
   },
   {
     title: 'Turnkey Electrical Solutions',
-    description: 'Complete end-to-end project execution from design to commissioning.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
-    ),
+    description: 'Complete end-to-end project execution from design to commissioning. We handle everything so you can focus on your core business.',
+    image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&h=400&fit=crop',
+    layout: 'text-only',
   },
   {
     title: 'Instrumentation Engineering',
-    description: 'Precision process instrumentation for industrial applications.',
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+    description: 'Precision process instrumentation for industrial applications with advanced calibration systems.',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop',
+    layout: 'image-top',
   },
 ];
 
@@ -71,7 +53,7 @@ export default function ExpertiseSection() {
         {/* Section Header */}
         <div className="text-center mb-20">
           <FadeIn>
-            <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+            <p className="text-lg uppercase tracking-[0.2em] text-secondary mb-4">
               Our Expertise
             </p>
           </FadeIn>
@@ -88,35 +70,171 @@ export default function ExpertiseSection() {
           </FadeIn>
         </div>
 
-        {/* Expertise Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {expertise.map((item, index) => (
-            <FadeIn key={item.title} delay={index * 0.1}>
-              <TiltCard className="h-full">
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="luxury-card h-full group cursor-pointer"
-                >
-                  {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-cream flex items-center justify-center text-slate-dark group-hover:bg-champagne group-hover:text-white transition-all duration-500">
-                    {item.icon}
-                  </div>
-                  
-                  {/* Content */}
-                  <h3 className="mt-6 text-xl font-semibold text-slate-dark">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-slate-light leading-relaxed">
-                    {item.description}
-                  </p>
-                  
-                  {/* Hover Underline */}
-                  <div className="mt-6 h-0.5 bg-champagne w-0 group-hover:w-16 transition-all duration-500" />
-                </motion.div>
-              </TiltCard>
-            </FadeIn>
-          ))}
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Row 1 */}
+          {/* Card 1 - Text Top, Image Bottom */}
+          <FadeIn delay={0.1}>
+            <motion.div
+              data-hover
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col cursor-pointer"
+            >
+              <div className="p-6 flex-1">
+                <h3 className="text-xl font-semibold text-slate-dark mb-3">
+                  {expertise[0].title}
+                </h3>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  {expertise[0].description}
+                </p>
+              </div>
+              <div className="relative h-48 w-full">
+                <Image
+                  src={expertise[0].image}
+                  alt={expertise[0].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+          </FadeIn>
+
+          {/* Card 2 - Image Top with Description */}
+          <FadeIn delay={0.15}>
+            <motion.div
+              data-hover
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full cursor-pointer flex flex-col"
+            >
+              <div className="relative h-48 w-full">
+                <Image
+                  src={expertise[1].image}
+                  alt={expertise[1].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 flex-1">
+                <h3 className="text-xl font-semibold text-slate-dark mb-3">
+                  {expertise[1].title}
+                </h3>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  {expertise[1].description}
+                </p>
+              </div>
+            </motion.div>
+          </FadeIn>
+
+          {/* Card 3 - Text Top, Image Bottom */}
+          <FadeIn delay={0.2}>
+            <motion.div
+              data-hover
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col cursor-pointer"
+            >
+              <div className="p-6 flex-1">
+                <h3 className="text-xl font-semibold text-slate-dark mb-3">
+                  {expertise[2].title}
+                </h3>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  {expertise[2].description}
+                </p>
+              </div>
+              <div className="relative h-48 w-full">
+                <Image
+                  src={expertise[2].image}
+                  alt={expertise[2].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+          </FadeIn>
+
+          {/* Row 2 */}
+          {/* Card 4 - Image Top, Text Bottom */}
+          <FadeIn delay={0.25}>
+            <motion.div
+              data-hover
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col cursor-pointer"
+            >
+              <div className="relative h-48 w-full">
+                <Image
+                  src={expertise[3].image}
+                  alt={expertise[3].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 flex-1">
+                <h3 className="text-xl font-semibold text-slate-dark mb-3">
+                  {expertise[3].title}
+                </h3>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  {expertise[3].description}
+                </p>
+              </div>
+            </motion.div>
+          </FadeIn>
+
+          {/* Card 5 - Text Top with Image */}
+          <FadeIn delay={0.3}>
+            <motion.div
+              data-hover
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col cursor-pointer"
+            >
+              <div className="p-6 flex-1">
+                <h3 className="text-xl font-semibold text-slate-dark mb-3">
+                  {expertise[4].title}
+                </h3>
+                <p className="text-slate-light text-sm leading-relaxed mb-4">
+                  {expertise[4].description}
+                </p>
+              </div>
+              <div className="relative h-40 w-full">
+                <Image
+                  src={expertise[4].image}
+                  alt={expertise[4].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+          </FadeIn>
+
+          {/* Card 6 - Image Top, Text Bottom */}
+          <FadeIn delay={0.35}>
+            <motion.div
+              data-hover
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full flex flex-col cursor-pointer"
+            >
+              <div className="relative h-48 w-full">
+                <Image
+                  src={expertise[5].image}
+                  alt={expertise[5].title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 flex-1">
+                <h3 className="text-xl font-semibold text-slate-dark mb-3">
+                  {expertise[5].title}
+                </h3>
+                <p className="text-slate-light text-sm leading-relaxed">
+                  {expertise[5].description}
+                </p>
+              </div>
+            </motion.div>
+          </FadeIn>
         </div>
       </div>
     </section>

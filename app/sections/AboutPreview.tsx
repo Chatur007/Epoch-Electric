@@ -21,7 +21,7 @@ export default function AboutPreview() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {stats.map((stat, index) => (
             <FadeIn key={stat.label} delay={index * 0.1}>
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left ">
                 <AnimatedCounter value={stat.value} />
                 <p className="mt-2 text-sm uppercase tracking-[0.15em] text-slate-light">
                   {stat.label}
@@ -30,22 +30,24 @@ export default function AboutPreview() {
             </FadeIn>
           ))}
         </div>
-
+{/* https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80 */}
         {/* Split Layout */}
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image Side */}
-          <div className="relative">
+          <div className="relative w-full">
             <Parallax offset={30}>
               <ImageReveal direction="left">
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
+                    src="/images/About/About_us.jpg"
                     alt="Epoch Electric Engineering Excellence"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
+                    priority
                   />
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/30 to-transparent z-10" />
                 </div>
               </ImageReveal>
             </Parallax>
@@ -78,7 +80,7 @@ export default function AboutPreview() {
           {/* Content Side */}
           <div>
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 About Epoch Electric
               </p>
             </FadeIn>

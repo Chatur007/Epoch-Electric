@@ -70,7 +70,7 @@ export default function CursorFollower() {
       animate={{
         scale: isHovering ? 1.5 : 1,
         opacity: isVisible ? 1 : 0,
-        backgroundColor: isHovering ? 'rgba(198, 167, 94, 0.1)' : 'transparent',
+        backgroundColor: isHovering ? 'rgba(0, 161, 226, 0.1)' : 'transparent',
       }}
       transition={{
         scale: { duration: 0.2 },
@@ -78,9 +78,9 @@ export default function CursorFollower() {
       }}
     >
       <div 
-        className="w-full h-full rounded-full border border-champagne/50"
+        className="w-full h-full rounded-full border border-primary/50"
         style={{
-          boxShadow: isHovering ? '0 0 20px rgba(198, 167, 94, 0.3)' : 'none',
+          boxShadow: isHovering ? '0 0 20px rgba(0, 161, 226, 0.3)' : 'none',
         }}
       />
     </motion.div>

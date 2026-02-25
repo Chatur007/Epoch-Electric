@@ -1,56 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-ivory: #F8F8F6;
-  --color-cream: #EFEFEA;
-  --color-champagne: #C6A75E;
-  --color-slate-dark: #1F2A37;
-  --color-slate-medium: #374151;
-  --color-slate-light: #6B7280;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
+  --color-primary: #00a1e2;
+  --color-accent: #ef7e1f;
+  --color-bg: #ffffff;
+  --color-border: #00a1e2;
+  --color-text: #00a1e2;
 }
 
 body {
-  @apply bg-ivory text-slate-dark antialiased font-sans;
-  font-feature-settings: 'cv11', 'ss01';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-white text-[var(--color-text)] font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-[var(--color-text)] font-bold;
+}
+
+p, span, li, label {
+  @apply text-[var(--color-text)];
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-soft border border-[var(--color-border)] transition-all duration-300;
+}
+
+
+.btn-primary {
+  @apply bg-[var(--color-primary)] text-white font-semibold rounded-xl shadow-soft transition-all duration-300;
+}
+.btn-primary:hover {
+  @apply bg-[var(--color-accent)] text-white;
+}
+
+.btn-accent {
+  @apply bg-[var(--color-accent)] text-white font-semibold rounded-xl shadow-soft transition-all duration-300;
+}
+.btn-accent:hover {
+  @apply bg-[var(--color-primary)] text-white;
+}
+
+.navbar {
+  @apply fixed w-full z-50 bg-white border-b border-[var(--color-border)] transition-all duration-300;
+}
+
+.section-separator {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-border);
+  margin: 48px 0;
+  border-radius: 12px;
+}
+
+.shadow-soft {
+  box-shadow: 0 8px 32px 0 rgba(0,161,226,0.12);
+}
+
+.transition-smooth {
+  transition: all 0.3s ease;
+}
+
+.whitespace-premium {
+  padding: 48px 0;
+}
+
+/* Apply Poppins font to all text elements */
+*,
+h1, h2, h3, h4, h5, h6,
+p, span, a, button, input, textarea, select, label,
+li, td, th, blockquote, figcaption {
+  font-family: 'Poppins', system-ui, sans-serif !important;
 }
 
 /* Selection styling */
 ::selection {
-  background-color: rgba(198, 167, 94, 0.3);
+  background-color: rgba(0, 161, 226, 0.3);
   color: #1F2A37;
 }
 
 /* Luxury Grid Overlay */
 .grid-overlay {
   background-image: 
-    linear-gradient(rgba(198,167,94,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(198,167,94,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0,161,226,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,161,226,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -58,8 +93,8 @@ body {
 .animated-grid {
   background-size: 80px 80px;
   background-image: 
-    linear-gradient(to right, rgba(198,167,94,0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(198,167,94,0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,161,226,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,161,226,0.05) 1px, transparent 1px);
   animation: gridMove 20s linear infinite;
 }
 
@@ -91,22 +126,34 @@ body {
 /* Luxury button styles */
 .btn-luxury {
   @apply relative overflow-hidden px-8 py-4 font-medium tracking-wide transition-all duration-500;
-  background: linear-gradient(135deg, #C6A75E 0%, #D4B76A 50%, #C6A75E 100%);
-  background-size: 200% 200%;
+  background-color: #00a1e2;
 }
 
 .btn-luxury:hover {
-  background-position: 100% 100%;
+  background-color: #ef7e1f;
   transform: translateY(-2px);
-  box-shadow: 0 10px 40px rgba(198, 167, 94, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 161, 226, 0.3);
+}
+
+/* Gradient text utility */
+/* Removed gradient text utility. Use solid color for text. */
+
+/* Gradient border utility */
+.border-gradient {
+  position: relative;
+  border: 2px solid #00a1e2;
+}
+
+.border-gradient::before {
+  display: none;
 }
 
 .btn-luxury-outline {
-  @apply relative px-8 py-4 font-medium tracking-wide border-2 border-slate-dark/20 transition-all duration-500;
+  @apply relative px-8 py-4 font-medium tracking-wide border-2 border-[#00a1e2] transition-all duration-500;
 }
 
 .btn-luxury-outline:hover {
-  @apply border-champagne text-champagne;
+  @apply border-[#ef7e1f] text-[#ef7e1f];
   transform: translateY(-2px);
 }
 
@@ -153,7 +200,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #C6A75E, #D4B76A);
+  background: linear-gradient(90deg, #ef7e1f, #f2984b);
   transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -189,7 +236,7 @@ body {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(198, 167, 94, 0.4);
+  background: rgba(0, 161, 226, 0.4);
   border-radius: 50%;
   animation: particleFloat 8s ease-in-out infinite;
 }
@@ -259,7 +306,7 @@ body {
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(198, 167, 94, 0.5);
+  border: 1px solid rgba(0, 161, 226, 0.5);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -269,7 +316,7 @@ body {
 
 .cursor-follower.active {
   transform: translate(-50%, -50%) scale(1.5);
-  background: rgba(198, 167, 94, 0.1);
+  background: rgba(0, 161, 226, 0.1);
 }
 
 /* Smooth scrollbar for webkit */
@@ -282,12 +329,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(198, 167, 94, 0.3);
+  background: rgba(0, 161, 226, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(198, 167, 94, 0.5);
+  background: rgba(0, 161, 226, 0.5);
 }
 
 /* Section transitions */
@@ -346,7 +393,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #C6A75E, #D4B76A);
+  background: linear-gradient(135deg, #00a1e2, #33b4e8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -386,7 +433,7 @@ body {
   left: 50%;
   width: 0;
   height: 1px;
-  background: #C6A75E;
+  background: #ef7e1f;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   transform: translateX(-50%);
 }
