@@ -4,17 +4,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const clients = [
-  { name: 'ONGC', logo: 'https://e7.pngegg.com/pngimages/626/110/png-clipart-oil-and-natural-gas-corporation-indian-oil-corporation-logo-business-india-text-rectangle-thumbnail.png' },
-  { name: 'Larsen & Toubro', logo: 'https://2025prodstorageaccount-eqdyc8g8hpccdfez.a02.azurefd.net/ltprod/media/d44ph50r/lt.svg' },
-  { name: 'TATA Power', logo: 'https://www.tatapower.com/content/experience-fragments/tatapoweraemsitesprogram/in/en/tatapower/header/master/_jcr_content/root/container/navigation/image.coreimg.svg/1732251840897/tp-logo.svg' },
-  { name: 'Adani', logo: 'https://www.adani.com/-/media/project/adaniv1/logo/adani-logo.svg' },
+  { name: 'ONGC', logo: 'https://hfglobal.parker.com/assets/img/logo.png' },
+  { name: 'Larsen & Toubro', logo: 'https://www.mrpl.co.in/images/MRPL_logo.jpg' },
+  { name: 'TATA Power', logo: 'https://www.dabur.com/static/images/android-icon-72x72.png' },
+  { name: 'Adani', logo: 'https://vekaprod-media.e-spirit.cloud/683d8ff4-df6e-4087-9cfd-eddeb6711c42/editorial_media/local_logos/logo-veka-profile-website.svg' },
   { name: 'Bharat Petroleum', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Bharat_Petroleum_logo.svg' },
   { name: 'Reliance Industries', logo: 'https://rilstaticasset.akamaized.net/sites/default/files/2022-11/reliance-industries-ltd.png' },
 ];
 
 export default function ClientsSection() {
   return (
-    <section className="relative py-16 bg-slate-dark overflow-hidden">
+    <section id="about-section" className="relative py-16 bg-slate-dark overflow-hidden">
       {/* Title */}
       <div className="text-center mb-10">
         <p className="text-lg uppercase tracking-[0.3em] text-champagne font-medium">

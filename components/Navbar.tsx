@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
+  { href: '/circular-carousel', label: 'Projects' },
   { href: '/careers', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -17,40 +17,56 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const [hideNavbar, setHideNavbar] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+const [atAbout, setAtAbout] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const about = document.getElementById("about-section");
+    if (!about) return;
+
+    const aboutTop = about.getBoundingClientRect().top;
+
+    if (aboutTop <= 500) {
+      setAtAbout(true);
+    } else {
+      setAtAbout(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-slate-dark/80 backdrop-blur-xl shadow-luxury py-4' 
-          : 'bg-transparent py-6'
-      }`}
-    >
+<motion.header
+  animate={{
+    opacity: atAbout ? 0 : 1,
+    y: atAbout ? -40 : 0,
+  }}
+  transition={{
+    duration: 0.5,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className={`fixed top-0 left-0 right-0 z-50 ${
+    atAbout ? "pointer-events-none" : ""
+  }`}
+>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="relative w-12 h-12">
-            <img
-              src="/images/Logo/logo2.png"
-              alt="Epoch Electric Logo"
-              className="w-12 h-12 object-contain"
-            />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-serif text-xl font-semibold tracking-wide text-white ">
-              <span className="text-primary">Epoch</span> <span className="text-champagne">Electric</span>
-            </span>
-          </div>
-        </Link>
+<div style={{ width: '8rem', height: '6rem' }}>
+
+    <Link href="/" className="group flex items-center gap-3">
+      <div className="relative w-25 h-25">
+        <img
+          src="/images/Logo/logo4.png"
+          alt="Epoch Electric Logo"
+          className="w-25 h-25 object-cover"
+        />
+      </div>
+    </Link>
+</div>
 
         {/* Desktop Navigation - Pill Container */}
         <div className="hidden lg:flex items-center">
@@ -68,12 +84,12 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <Link
+            {/* <Link
               href="/contact#quote"
               className="ml-2 px-5 py-2 text-sm font-medium text-white/80 hover:text-white transition-all duration-300 rounded-full"
             >
               Get Quote
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -152,6 +168,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }

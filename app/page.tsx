@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next';
 import PageLayout from '@/components/PageLayout';
+import HeroCanvasAnimation from './sections/HeroCanvasAnimation';
 import HeroSection from './sections/HeroSection';
 import AboutPreview from './sections/AboutPreview';
 import ExpertiseSection from './sections/ExpertiseSection';
@@ -7,6 +8,8 @@ import IndustriesSection from './sections/IndustriesSection';
 import ProjectsPreview from './sections/ProjectsPreview';
 import ClientsSection from './sections/ClientsSection';
 import CTASection from './sections/CTASection';
+import ScrollFrameAnimationSection from './sections/ScrollFrameAnimationSection';
+
 
 export const metadata: Metadata = {
   title: 'Home | Premium Electrical Engineering',
@@ -25,7 +28,8 @@ export default function Home() {
 
   return (
     <PageLayout>
-      <HeroSection />
+      <HeroSection/>
+      {/* <ScrollFrameAnimationSection/> */}
       <ClientsSection />
       <AboutPreview />
       <ExpertiseSection />

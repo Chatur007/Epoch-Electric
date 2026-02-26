@@ -58,7 +58,7 @@ export default function ProjectsPreview() {
           <FadeIn delay={0.2}>
             <MagneticButton>
               <Link
-                href="/projects"
+                href="/circular-carousel"
                 className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] font-medium text-slate-dark gold-underline"
               >
                 View All Projects

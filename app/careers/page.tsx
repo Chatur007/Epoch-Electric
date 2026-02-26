@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PageLayout from '@/components/PageLayout';
 import { FadeIn, MagneticButton } from '@/components/Motion';
 import AnimatedCounter from '@/components/AnimatedCounter';
+import { FaBuilding, FaBookOpen, FaShieldAlt, FaRocket } from 'react-icons/fa';
 
 const stats = [
   { value: 15, label: 'Years Experience', suffix: '+' },
@@ -17,22 +18,22 @@ const benefits = [
   {
     title: 'Large-Scale Projects',
     description: 'Work on impactful industrial and infrastructure projects across India.',
-    icon: '🏗️',
+    icon: <FaBuilding className="h-12 w-12 text-primary" />,
   },
   {
     title: 'Learning & Growth',
     description: 'Continuous learning opportunities with exposure to latest technologies.',
-    icon: '📚',
+    icon: <FaBookOpen className="h-12 w-12 text-primary" />,
   },
   {
     title: 'EHS Culture',
     description: 'Strong commitment to Environment, Health, and Safety standards.',
-    icon: '🛡️',
+    icon: <FaShieldAlt className="h-12 w-12 text-primary" />,
   },
   {
     title: 'Professional Development',
     description: 'Clear career paths with mentorship from industry experts.',
-    icon: '🚀',
+    icon: <FaRocket className="h-12 w-12 text-primary" />,
   },
 ];
 
@@ -119,8 +120,22 @@ export default function CareersPage() {
 
   return (
     <PageLayout>
+      {/* Hero Image Section */}
+      {/* <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <img
+          src="/images/careers-hero.png" // <-- Replace with your actual hero image path
+          alt="Careers at Epoch Electric"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" /> */}
+        {/* <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Careers</h1>
+        </div> */}
+        
+      {/* </div> */}
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center bg-ivory overflow-hidden pt-24">
+      {/* <section className="relative min-h-[60vh] flex items-center bg-ivory overflow-hidden pt-24">
+        
         <div className="absolute inset-0 grid-overlay opacity-30" />
         
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-20">
@@ -143,10 +158,48 @@ export default function CareersPage() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+
+  {/* Background Image */}
+  <img
+    src="/images/careers-hero.png"
+    alt="Careers at Epoch Electric"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/50" />
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 py-32">
+    <div className="max-w-3xl text-white">
+      
+      <FadeIn>
+        <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
+          Join Our Team
+        </p>
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <h1 className="font-serif text-5xl lg:text-6xl font-semibold leading-tight">
+          Build Your Career With Power
+        </h1>
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <p className="mt-8 text-xl text-white/80 leading-relaxed">
+          Join a team of passionate engineers shaping the future of electrical 
+          infrastructure in India. Grow with us, learn with us.
+        </p>
+      </FadeIn>
+
+    </div>
+  </div>
+</section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-cream">
+      <section id="about-section" className="py-16 bg-cream">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -168,7 +221,7 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="text-center mb-16">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 Why Join Us
               </p>
             </FadeIn>
@@ -184,13 +237,15 @@ export default function CareersPage() {
               <FadeIn key={benefit.title} delay={index * 0.1}>
                 <motion.div
                   whileHover={{ y: -8 }}
-                  className="bg-white p-8 shadow-luxury hover:shadow-luxury-lg transition-all duration-500 text-center"
+                  className="bg-white p-8 shadow-luxury hover:shadow-luxury-lg transition-all duration-500 text-center flex flex-col items-center min-h-[320px] h-full"
                 >
-                  <span className="text-4xl mb-6 block">{benefit.icon}</span>
+                  <div className="mb-6 flex items-center justify-center h-16">
+                    {benefit.icon}
+                  </div>
                   <h3 className="text-lg font-semibold text-slate-dark mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-slate-light text-sm">{benefit.description}</p>
+                  <p className="text-slate-light text-sm flex-1">{benefit.description}</p>
                 </motion.div>
               </FadeIn>
             ))}
@@ -203,7 +258,7 @@ export default function CareersPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="text-center mb-16">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 Current Openings
               </p>
             </FadeIn>
@@ -293,7 +348,7 @@ export default function CareersPage() {
         <div className="mx-auto max-w-3xl px-6 lg:px-12">
           <div className="text-center mb-12">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 Start Your Journey
               </p>
             </FadeIn>

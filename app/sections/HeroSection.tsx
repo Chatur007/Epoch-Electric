@@ -21,12 +21,14 @@ export default function HeroSection() {
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-dark">
       {/* Background Image with Parallax */}
-      <motion.div 
+      <motion.video 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
-        style={{ 
-          backgroundImage: 'url("/images/Gemini_Generated_Image_34ou6o34ou6o34ou.png")',
-          y: backgroundY,
-        }}
+       src="/videos/industrial-power.mp4" // <-- update with your video path
+  autoPlay
+  loop
+  muted
+  playsInline
+  style={{ y: backgroundY }}
       />
       {/* Dark Overlay for readability */}
       <div className="absolute inset-0 bg-slate-dark/80" />
@@ -70,7 +72,7 @@ export default function HeroSection() {
               initial={{ clipPath: 'inset(0 100% 0 0)' }}
               animate={{ clipPath: 'inset(0 0% 0 0)' }}
               transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block whitespace-nowrap leading-[1.4] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.3]"
+              className="inline-block whitespace-nowrap leading-[1.4] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.3] "
             >
               Engineering Power.
             </motion.span>
@@ -79,7 +81,7 @@ export default function HeroSection() {
               initial={{ clipPath: 'inset(0 100% 0 0)' }}
               animate={{ clipPath: 'inset(0 0% 0 0)' }}
               transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block leading-[1.4] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.3]"
+              className="inline-block leading-[1.4] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.3] "
             >
               Delivering{' '}
               <span className="text-champagne">Precision.</span>
@@ -91,7 +93,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-8 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed text-center"
           >
             Turnkey Electrical & Instrumentation Solutions for Industry Leaders. 
             From 220kV substations to precision control systems.
@@ -102,7 +104,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.4 }}
-            className="mt-12 flex flex-wrap gap-4"
+            className="mt-12 flex flex-wrap gap-4 "
           >
             <MagneticButton>
               <Link 

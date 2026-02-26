@@ -34,15 +34,27 @@ const memberships = [
 export default function AboutPage() {
   return (
     <PageLayout>
+      {/* Hero Image Section */}
+      {/* <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <img
+          src="/images/about-hero.png" // <-- Replace with your actual hero image path
+          alt="About Epoch Electric"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">About Us</h1>
+        </div>
+      </div> */}
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center bg-ivory overflow-hidden pt-24">
+      {/* <section className="relative min-h-[70vh] flex items-center bg-ivory overflow-hidden pt-24">
         <div className="absolute inset-0 grid-overlay opacity-30" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-radial from-champagne/5 to-transparent" />
         
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12 py-20">
           <div className="max-w-3xl">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 About Epoch Electric
               </p>
             </FadeIn>
@@ -60,10 +72,54 @@ export default function AboutPage() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+
+  {/* Background Image */}
+  <Image
+    src="/images/about-hero.png"
+    alt="About Epoch Electric"
+    fill
+    priority
+    className="object-cover"
+  />
+
+  {/* Luxury Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+
+  {/* Subtle Radial Highlight */}
+  <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-radial from-champagne/10 to-transparent" />
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 py-32">
+    <div className="max-w-3xl text-white">
+
+      <FadeIn>
+        <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
+          About Epoch Electric
+        </p>
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <h1 className="font-serif text-5xl lg:text-6xl font-semibold leading-tight">
+          Engineering Excellence Since 2010
+        </h1>
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <p className="mt-8 text-xl text-white/80 leading-relaxed">
+          Headquartered in Navi Mumbai, Epoch Electric Pvt. Ltd. is an ISO-certified 
+          organization delivering comprehensive Electrical & Instrumentation engineering 
+          solutions from 220kV to 230V.
+        </p>
+      </FadeIn>
+
+    </div>
+  </div>
+</section>
 
       {/* Company Overview */}
-      <section className="py-24 bg-cream">
+      <section id="about-section" className="py-24 bg-cream">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -123,7 +179,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="text-center mb-16">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lguppercase tracking-[0.2em] text-champagne mb-4">
                 Our Philosophy
               </p>
             </FadeIn>
@@ -158,7 +214,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <FadeIn>
-                <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+                <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                   Quality Assurance
                 </p>
                 <h2 className="font-serif text-4xl font-semibold text-slate-dark mb-8">
@@ -187,7 +243,7 @@ export default function AboutPage() {
             
             <div>
               <FadeIn>
-                <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+                <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                   Industry Recognition
                 </p>
                 <h2 className="font-serif text-4xl font-semibold text-slate-dark mb-8">
@@ -215,7 +271,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="text-center mb-16">
             <FadeIn>
-              <p className="text-xs uppercase tracking-[0.2em] text-champagne mb-4">
+              <p className="text-lg uppercase tracking-[0.2em] text-champagne mb-4">
                 Strategic Partnerships
               </p>
             </FadeIn>
@@ -226,11 +282,11 @@ export default function AboutPage() {
             </FadeIn>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
             <FadeIn delay={0.2}>
-              <div className="bg-white p-10 text-center shadow-luxury hover:shadow-luxury-lg transition-all duration-500">
+              <div className="bg-white p-10 text-center shadow-luxury hover:shadow-luxury-lg transition-all duration-500 h-full flex flex-col justify-center">
                 <h3 className="font-serif text-2xl font-semibold text-slate-dark mb-4">
-                  Eaton Power Quality Pvt. Ltd.
+                  Eaton Power Quality 
                 </h3>
                 <p className="text-slate-light">
                   Strategic collaboration for power quality solutions and electrical 
@@ -239,9 +295,9 @@ export default function AboutPage() {
               </div>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <div className="bg-white p-10 text-center shadow-luxury hover:shadow-luxury-lg transition-all duration-500">
+              <div className="bg-white p-10 text-center shadow-luxury hover:shadow-luxury-lg transition-all duration-500 h-full flex flex-col justify-center">
                 <h3 className="font-serif text-2xl font-semibold text-slate-dark mb-4">
-                  Luker Electric Technologies Pvt. Ltd.
+                  Luker Electric Technologies 
                 </h3>
                 <p className="text-slate-light">
                   Partnership for advanced electrical technologies and 
